@@ -9,7 +9,7 @@ app.config(function($routeProvider,$locationProvider){
   })
   .when('/main-page', {
     controller: 'mainPage',
-    templateUrl: 'views/main-page/view/mainpage.html'
+    templateUrl: 'mainpage.html'
   })
   .when('/about-us', {
     controller: 'aboutUs',
