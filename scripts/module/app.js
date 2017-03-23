@@ -14,6 +14,10 @@ app.config(function($routeProvider,$locationProvider){
   .when('/about-us', {
     controller: 'aboutUs',
     templateUrl: 'views/about-us/view/aboutus.html'
+  })
+  .otherwise('/landing-page', {
+    controller: 'landingPage',
+    templateUrl: 'views/landing-page/view/landingpage.html'
   });
 
   $locationProvider.hashPrefix('');

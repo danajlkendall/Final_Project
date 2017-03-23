@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +10,18 @@
     <title></title>
   </head>
   <body ng-app="mainApp">
-
-    <a href="#/landing-page">Landing</a>
-    <a href="#/main-page">Main</a>
-    <a href="#/about-us">About</a>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <header class="navbar-brand">Detroit Crime</header>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/landing-page">Home</a></li>
+          <li><a href="#/about-us">About</a></li>
+          <li><a href="#/main-page">Precinct Info</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <ng-view></ng-view>
 
