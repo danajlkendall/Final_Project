@@ -1,6 +1,6 @@
 var app = angular.module('mainApp');
 
-app.controller('landingPage',function($scope, $location, dataFactory){
+app.controller('landingPage',function($scope, $location){
 
   $scope.precincts = [
     {name : "2nd Precinct", number : "2"},
