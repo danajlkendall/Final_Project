@@ -2,8 +2,8 @@ var app = angular.module('mainApp');
 
 app.controller('mainPage',function($scope, $http){
 
-  var homData = {};
-  var allHomicides = [];
+  $scope.homData = {};
+  $scope.allHomicides = [];
 
   $http({
       method: 'GET',
@@ -15,12 +15,14 @@ app.controller('mainPage',function($scope, $http){
       for (var i=0; i<$scope.homData.length; i++){
         var homicide = {
           precinct: $scope.homData[i].precinct,
-          date: $scope.homData[i].incidentdate
+          date: $scope.homData[i].incidentdate,
+          lat: $scope.homData[i].latitude,
+          long: $scope.homData[i].longtitude
         }
-        allHomicides.push(homicide);
+        $scope.allHomicides.push(homicide);
       };
     });
 
-    console.log(allHomicides);
+    console.log($scope.allHomicides);
 
 });
