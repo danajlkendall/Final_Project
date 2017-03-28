@@ -3,23 +3,24 @@
   <div class="row">
     <div class="col-sm-12">
       <h3>Map Stuff</h3>
-      <p>Map goes here</p><br>
-        <select ng-model="selected" ng-change="getData(selected)">
-          <option ng-repeat="precinct in precincts" value="{{precinct.value}}">{{precinct.name}}</option>
-        </select>
+      <div id="map"></div><br>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-8">
       <h4>Chart Stuff</h4>
-      <p>{{precinct.name}} Homicides per Month (2016)</p>
+      <p>Homicides per Month by Precinct (2016)</p><br>
+      <label>Select a precinct:</label><br>
+      <select ng-model="selected" ng-change="getData(selected)">
+        <option ng-repeat="precinct in precincts" value="{{precinct.value}}">{{precinct.name}}</option>
+      </select>
       <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
     </div>
 
     <div class="col-sm-4">
       <h4>Twitter Feed</h4>
-      <a class="twitter-timeline" href="https://www.twitter.com/detroitpolice" data-tweet-limit="4">Tweets by detroitpolice</a>
+      <a class="twitter-timeline" href="https://www.twitter.com/detroitpolice" data-tweet-limit="4">Tweets by detroitpolice</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>
 
