@@ -223,7 +223,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(38,77,153)",
           fillOpacity: 0.35
         });
 
@@ -234,7 +234,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(165,43,14)",
           fillOpacity: 0.35
         });
         PrecinctThreePoly.setMap(map);
@@ -244,7 +244,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(191,115,0)",
           fillOpacity: 0.35
         });
         PrecinctFourPoly.setMap(map);
@@ -254,7 +254,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(12,113,18)",
           fillOpacity: 0.35
         });
         PrecinctFivePoly.setMap(map);
@@ -264,7 +264,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(115,0,115)",
           fillOpacity: 0.35
         });
         PrecinctSixPoly.setMap(map);
@@ -274,7 +274,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(0,115,149)",
           fillOpacity: 0.35
         });
         PrecinctSevenPoly.setMap(map);
@@ -284,7 +284,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(221,68,119)",
           fillOpacity: 0.35
         });
         PrecinctEightPoly.setMap(map);
@@ -294,7 +294,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(102,170,0)",
           fillOpacity: 0.35
         });
         PrecinctNinePoly.setMap(map);
@@ -304,7 +304,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(184,46,46)",
           fillOpacity: 0.35
         });
         PrecinctTenPoly.setMap(map);
@@ -314,7 +314,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(49,99,149)",
           fillOpacity: 0.35
         });
         PrecinctElevenPoly.setMap(map);
@@ -324,7 +324,7 @@ app.controller('mainPage',function($scope, $http){
           strokeColor: 'blue',
           strokeOpacity: 0.8,
           strokeWeight: 3,
-          fillColor: 'black',
+          fillColor: "rgb(153,68,153)",
           fillOpacity: 0.35
         });
         PrecinctTwelvePoly.setMap(map);
