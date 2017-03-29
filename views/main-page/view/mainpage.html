@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mainContainer">
 
   <div class="row">
     <div class="col-sm-12">
@@ -12,10 +12,10 @@
       <h4>Chart Stuff</h4>
       <p>Homicides per Month by Precinct (2016)</p><br>
       <label>Select a precinct:</label><br>
-      <select ng-model="selected" ng-change="getData(selected)">
+      <select class ="mainDropdown" ng-model="selected" ng-change="getData(selected)">
         <option ng-repeat="precinct in precincts" value="{{precinct.value}}">{{precinct.name}}</option>
       </select>
-      <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+      <div id="columnchart_values" style="width: 900px; height: 300px;"></div><br><br>
     </div>
 
     <div class="col-sm-4">

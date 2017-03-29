@@ -67,19 +67,19 @@ app.controller('mainPage',function($scope, $http){
           google.charts.setOnLoadCallback(drawChart);
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ["Element", "Density", { role: "style" } ],
-              ["Jan", $scope.homChart.homJan, "#5499c7"],
-              ["Feb", $scope.homChart.homFeb, "#1b2631"],
-              ["Mar", $scope.homChart.homMar, "#1f618d"],
-              ["Apr", $scope.homChart.homApr, "#d4e6f1"],
-              ["May", $scope.homChart.homMay, "#bdc3c7"],
-              ["Jun", $scope.homChart.homJun, "#85929e"],
-              ["Jul", $scope.homChart.homJul, "#5499c7"],
-              ["Aug", $scope.homChart.homAug, "#1b263"],
-              ["Sep", $scope.homChart.homSep, "#1f618d"],
-              ["Oct", $scope.homChart.homOct, "#d4e6f1"],
-              ["Nov", $scope.homChart.homNov, "#bdc3c7"],
-              ["Dec", $scope.homChart.homDec, "#85929e"]
+              ["Element", "# Homicides", { role: "style" } ],
+              ["Jan 2016", $scope.homChart.homJan, "#5499c7"],
+              ["Feb 2016", $scope.homChart.homFeb, "#1b2631"],
+              ["Mar 2016", $scope.homChart.homMar, "#1f618d"],
+              ["Apr 2016", $scope.homChart.homApr, "#d4e6f1"],
+              ["May 2016", $scope.homChart.homMay, "#bdc3c7"],
+              ["Jun 2016", $scope.homChart.homJun, "#85929e"],
+              ["Jul 2016", $scope.homChart.homJul, "#5499c7"],
+              ["Aug 2016", $scope.homChart.homAug, "#1b263"],
+              ["Sep 2016", $scope.homChart.homSep, "#1f618d"],
+              ["Oct 2016", $scope.homChart.homOct, "#d4e6f1"],
+              ["Nov 2016", $scope.homChart.homNov, "#bdc3c7"],
+              ["Dec 2016", $scope.homChart.homDec, "#85929e"]
             ]);
 
             var view = new google.visualization.DataView(data);
@@ -120,7 +120,6 @@ app.controller('mainPage',function($scope, $http){
 
     // Retrieve our data and plot it
     $.getJSON(url, function(data, textstatus) {
-      console.log(data);
       $.each(data, function(i, entry) {  //begin labelling of each variable attribute passed from the JSON to JS
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(entry.location.latitude,
@@ -328,8 +327,5 @@ app.controller('mainPage',function($scope, $http){
           fillOpacity: 0.35
         });
         PrecinctTwelvePoly.setMap(map);
-
-
-
       });
     });
