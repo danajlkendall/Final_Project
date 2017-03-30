@@ -111,7 +111,7 @@ app.controller('mainPage',function($scope, $http){
       });
   };
 
-    //GOGLE MAP SECTION
+    //GOOGLE MAP SECTION
 
     // Construct the catalog query string
     url = 'https://data.detroitmi.gov/resource/jut2-warj.json';
@@ -124,12 +124,48 @@ app.controller('mainPage',function($scope, $http){
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
+
+      // Creates Marker Clusters Based on Precinct Location //
+
+          var labels = ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '12'];
+
+          var locations = [
+            {lat: 42.373078, lng: -83.171970}, //2
+            {lat: 42.352186, lng: -83.079070}, //3
+            {lat: 42.307477, lng: -83.120464}, //4
+            {lat: 42.383775, lng: -82.967772}, //5
+            {lat: 42.362909, lng: -83.236022}, //6
+            {lat: 42.362538, lng: -83.017738}, //7
+            {lat: 42.419013, lng: -83.246792}, //8
+            {lat: 42.427568, lng: -82.969753}, //9
+            {lat: 42.378874, lng: -83.112418}, //10
+            {lat: 42.433366, lng: -83.053181}, //11
+            {lat: 42.431481, lng: -83.150582}, //12
+          ];
+
+          var markers = locations.map(function(location, i) {
+                   return new google.maps.Marker({
+                     position: location,
+                     icon: new google.maps.MarkerImage('http://www.free-icons-download.net/images/gray-shield-icon-32200.png',   //Precinct Shield Icon Source Location
+                     null, null, null, new google.maps.Size(60,60)),
+                     //draggable: true,
+                     label: labels[i % labels.length],
+                     map: map,
+                 });
+               });
+
+
+      //  var markerCluster = new MarkerClusterer(map, markers);
+
+
     // Retrieve our data and plot it
     $.getJSON(url, function(data, textstatus) {
       $.each(data, function(i, entry) {  //begin labelling of each variable attribute passed from the JSON to JS
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(entry.location.latitude,
+            position: new google.maps.LatLng(entry.location.latitude,
             entry.location.longitude),
+            visible: true,
             map: map,
             precinct: entry.precinct,
             crimeid: entry.crimeid,
@@ -140,6 +176,7 @@ app.controller('mainPage',function($scope, $http){
             neighborhood: entry.neighborhood,
           });
 
+//Creates a Popup for each marker, and actively fills by calling the JSON objects //
           var popup = new google.maps.InfoWindow( {
             content: '<div>'+
             '<h3>'+'Crime Type: '+'</h3>'+'<p>'+marker.category+'</p>'+
@@ -147,13 +184,21 @@ app.controller('mainPage',function($scope, $http){
             '<h3>'+'Neighborhood: '+'</h3>'+'<p>'+marker.neighborhood+'</p>'+
             '</div>'
           });
+//Creates the POPUP function
+marker.addListener('click', function(event){
+  popup.setPosition(event.latLng);
+  popup.open(map);
+});
+          // Toggles Marker Visibility based on Zoom Level
+          google.maps.event.addListener(map, 'zoom_changed', function() {
+          var zoom = map.getZoom();
+              if (zoom >= 12) {
+                marker.setMap(map);
 
-          //creats the POPUP Function
-          marker.addListener('click', function(event){
-            popup.setPosition(event.latLng);
-            popup.open(map);
-          }); //closes out the POPUP Function
-
+              } else {
+                  marker.setMap(null);
+              }
+          });
 
           //////////////Below is copied from Google Maps API Documentation ////////////////////////////
           map.data.setStyle(function(feature) {
@@ -166,23 +211,6 @@ app.controller('mainPage',function($scope, $http){
               strokeColor: color,
               strokeWeight: 2
             });
-          });
-
-          // When the user clicks, set 'isColorful', changing the color of the letters.
-          map.data.addListener('click', function(event) {
-            event.feature.setProperty('isColorful', true);
-          });
-
-          // When the user hovers, tempt them to click by outlining the letters.
-          // Call revertStyle() to remove all overrides. This will use the style rules
-          // defined in the function passed to setStyle()
-          map.data.addListener('mouseover', function(event) {
-            map.data.revertStyle();
-            map.data.overrideStyle(event.feature, {strokeWeight: 8});
-          });
-
-          map.data.addListener('mouseout', function(event) {
-            map.data.revertStyle();
           });
 
         });  //closes the .ON Window Load main function
@@ -331,5 +359,8 @@ app.controller('mainPage',function($scope, $http){
           fillOpacity: 0.35
         });
         PrecinctTwelvePoly.setMap(map);
+
+
+
       });
     });
