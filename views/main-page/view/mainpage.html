@@ -15,7 +15,13 @@
       <select class ="mainDropdown" ng-model="selected" ng-change="getData(selected)">
         <option ng-repeat="precinct in precincts" value="{{precinct.value}}">{{precinct.name}}</option>
       </select>
-      <div id="columnchart_values" style="width: 900px; height: 300px;"></div><br><br>
+      <div id="columnchart_values" style="width: 900px; height: 300px;"></div><br>
+      <ul>
+        <li ng-repeat="homicide in allHomicides">
+          Date: {{homicide.date}}<br>
+          Description: {{homicide.desc}}<br>
+        </li>
+      </ul>
     </div>
 
     <div class="col-sm-4">

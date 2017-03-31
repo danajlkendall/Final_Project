@@ -3,45 +3,51 @@ var app = angular.module('mainApp');
 app.controller('mainPage',function($scope, $http){
 
   //GRAPH STUFF
-  $scope.homData = {};
+  $scope.homData = [];
   $scope.allHomicides = [];
   $scope.chartData = {};
   $scope.homChart={};
-
-  $http({
-    method: 'GET',
-    url: 'https://data.detroitmi.gov/resource/jut2-warj.json',
-    headers: {'X-App-Token': 'c9TllBUfGZDL2uOu9rgu1j0vw'}
-  }).then(function successCallBack(response) {
-    $scope.homData = response.data;
-
-    for (var i=0; i<$scope.homData.length; i++){
-      var homicide = {
-        precinct: $scope.homData[i].precinct,
-        date: $scope.homData[i].incidentdate,
-        lat: $scope.homData[i].location.latitude,
-        long: $scope.homData[i].location.longitude
-      };
-      $scope.allHomicides.push(homicide);
-    };
-  });
+  $scope.selectedPrecinct=[];
 
   $scope.precincts = [
-    {name : "2nd Precinct", value : 2},
-    {name : "3rd Precinct", value : 3},
-    {name : "4th Precinct", value : 4},
-    {name : "5th Precinct", value : 5},
-    {name : "6th Precinct", value : 6},
-    {name : "7th Precinct", value : 7},
-    {name : "8th Precinct", value : 8},
-    {name : "9th Precinct", value : 9},
-    {name : "10th Precinct", value : 10},
-    {name : "11th Precinct", value : 11},
-    {name : "12th Precinct", value : 12},
+    {name : "2nd Precinct", value : "02"},
+    {name : "3rd Precinct", value : "03"},
+    {name : "4th Precinct", value : "04"},
+    {name : "5th Precinct", value : "05"},
+    {name : "6th Precinct", value : "06"},
+    {name : "7th Precinct", value : "07"},
+    {name : "8th Precinct", value : "08"},
+    {name : "9th Precinct", value : "09"},
+    {name : "10th Precinct", value : "10"},
+    {name : "11th Precinct", value : "11"},
+    {name : "12th Precinct", value : "12"},
   ];
 
   $scope.getData = function(selected){
     $scope.selectedPrecinct = selected;
+
+    $http({
+      method: 'GET',
+      url: 'https://data.detroitmi.gov/resource/jut2-warj.json',
+      headers: {'X-App-Token': 'c9TllBUfGZDL2uOu9rgu1j0vw'}
+    }).then(function successCallBack(response) {
+
+      $scope.homData = response.data;
+
+      for (var i=0; i<$scope.homData.length; i++){
+        if ($scope.selectedPrecinct == response.data[i].precinct){
+          var homicide = {
+            precinct: $scope.homData[i].precinct,
+            date: $scope.homData[i].incidentdate,
+            lat: $scope.homData[i].location.latitude,
+            long: $scope.homData[i].location.longitude,
+            desc: $scope.homData[i].offensedescription
+          };
+          $scope.allHomicides.push(homicide);
+        };
+      };
+      console.log($scope.allHomicides);
+    });
 
     $.getJSON("views/main-page/controller/chart.json", function(json) {
       $scope.chartData = json.precinct;
@@ -103,7 +109,7 @@ app.controller('mainPage',function($scope, $http){
           };
         };
       });
-    };
+  };
 
 
     //GOOGLE MAP SECTION
