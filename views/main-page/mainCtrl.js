@@ -23,6 +23,33 @@ app.controller('mainPage',function($scope, $http){
     {name : "12th Precinct", value : "12"},
   ];
 
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Precinct Number', 'Homicides in 2016'],
+      ['2nd Precinct',     24],
+      ['3rd Precinct',      12],
+      ['4th Precinct',     29],
+      ['5th Precinct',      20],
+      ['6th Precinct',      33],
+      ['7th Precinct',      19],
+      ['8th Precinct',      44],
+      ['9th Precinct',     46],
+      ['10th Precinct',     20 ],
+      ['11th Precinct',    18],
+      ['12th Precinct',     34 ],
+    ]);
+
+    var options = {
+      title: '2016 Homicides by Precinct',
+      is3D: true,
+    };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+    };
+
   $scope.getData = function(selected){
     $scope.selectedPrecinct = selected;
 
@@ -49,7 +76,9 @@ app.controller('mainPage',function($scope, $http){
       console.log($scope.allHomicides);
     });
 
-    $.getJSON("views/main-page/controller/chart.json", function(json) {
+    document.getElementById("piechart_3d").className = "noChart";
+
+    $.getJSON("views/main-page/chart.json", function(json) {
       $scope.chartData = json.precinct;
 
       for (var i=0; i<$scope.chartData.length; i++){
