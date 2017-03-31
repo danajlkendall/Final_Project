@@ -1,0 +1,51 @@
+html{
+	background-color: black ;
+	background: url('flagClear2.png') no-repeat center center fixed, url('https://media.giphy.com/media/x0GeFXErpcRk4/giphy.gif') no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ z-index: -1;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+.center{
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow {
+	display: inline-block;
+	position: relative;
+	text-indent: -9999px;
+	width: 475px;
+	height: 475px;	background: url(logo.png) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+.arrow span {
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background: url(chalkOutline.png) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	background-position: px 0;
+}
+
+
+
+
+
+
+
