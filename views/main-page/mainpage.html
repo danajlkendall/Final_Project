@@ -3,39 +3,45 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="mapContainer">
-        <h3 class="header">Map Stuff</h3>
-        <div id="map"></div><br>
+        <h2 class="header">LOCATE A DETROIT HOMICIDE</h3>
+          <p class="mainText">
+            Detroit Murder Map was created to give Detroit residents an easier way to locate homicidal activity in their area <br>
+            using open-source data found on the <a href="https://data.detroitmi.gov/">Detroit's Open Data Portal</a> for 2016.<br>
+            <br>
+            Note: All information is broken down by Detroit precincts. Browse precincts below, or search an address to find a specific precinct.
+          </p>
+          <div id="map"></div><br>
+        </div>
       </div>
     </div>
-  </div>
-  <br>
-  <input class = "mainText" id="pac-input" class="controls" type="text" placeholder="Search an Address">
+    <br>
+    <input class = "mainText" id="pac-input" class="controls" type="text" placeholder="Search an Address">
 
-  <div class="row">
-    <div class="col-sm-8">
-      <h4 class="header">Chart Stuff</h4>
-      <p class="mainText">Homicides per Month by Precinct (2016)</p><br>
-      <label class="mainText">Select a precinct:</label><br>
-      <select class ="mainDropdown" ng-model="selected" ng-change="getData(selected)">
-        <option ng-repeat="precinct in precincts" value="{{precinct.value}}">{{precinct.name}}</option>
-      </select>
-      <div class="pieChart" id="piechart_3d" style="width: 900px; height: 500px;"></div>
-      <div id="columnchart_values" style="width: 900px; height: 300px;"></div><br>
-      <div class = "mainPrecinctInfo">
-        <h4 class="header">All Homicides in the {{precinct.name}}</h4>
-        <ul class="mainText">
-          <li ng-repeat="homicide in allHomicides">
-            Date: {{homicide.date}}<br>
-            Description: {{homicide.desc}}<br>
-          </li>
-        </ul>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="chartContainer">
+          <h4 class="header">HOMICIDE STATISTICS</h4>
+          <p class="mainText">Homicides per Month by Precinct (2016)</p><br>
+          <label class="mainText">Select a precinct:</label><br>
+          <select class ="mainDropdown" ng-model="selected" ng-change="getData(selected)">
+            <option ng-repeat="precinct in precincts" value="{{precinct.value}}">{{precinct.name}}</option>
+          </select>
+          <div class="pieChart" id="piechart_3d" style="width: 900px; height: 500px;"></div>
+          <div id="columnchart_values" style="width: 900px; height: 300px;"></div><br>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class = "mainPrecinctInfo">
+          <h4 class="header">HOMICIDE DETAILS</h4>
+          <ul class="mainText">
+            <li ng-repeat="homicide in allHomicides">
+              Date: {{homicide.date}}<br>
+              Description: {{homicide.desc}}<br><br>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="col-sm-4">
-      <h4 class="header">Twitter Feed</h4>
-      <a class="twitter-timeline" href="https://www.twitter.com/detroitpolice" data-tweet-limit="4">Tweets by detroitpolice</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
   </div>
-
-</div>

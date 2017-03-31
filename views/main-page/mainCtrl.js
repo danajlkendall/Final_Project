@@ -2,6 +2,8 @@ var app = angular.module('mainApp');
 
 app.controller('mainPage',function($scope, $http){
 
+  $.backstretch("https://cdn.shutterstock.com/shutterstock/videos/5610953/thumb/6.jpg");
+
   //GRAPH STUFF
   $scope.homData = [];
   $scope.allHomicides = [];
@@ -43,7 +45,7 @@ app.controller('mainPage',function($scope, $http){
 
     var options = {
       title: '2016 Homicides by Precinct',
-      is3D: true,
+      is3D: false,
     };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -60,6 +62,7 @@ app.controller('mainPage',function($scope, $http){
     }).then(function successCallBack(response) {
 
       $scope.homData = response.data;
+      $scope.allHomicides = [];
 
       for (var i=0; i<$scope.homData.length; i++){
         if ($scope.selectedPrecinct == response.data[i].precinct){
@@ -127,8 +130,6 @@ app.controller('mainPage',function($scope, $http){
 
               var options = {
                 title: "Homicides per Month in Precinct: " + $scope.selectedPrecinct,
-                width: 600,
-                height: 400,
                 bar: {groupWidth: "95%"},
                 legend: { position: "none" },
               };
@@ -291,10 +292,10 @@ var PrecinctSevenTwo = [
 
         var PrecinctTwoPoly = new google.maps.Polygon({
           paths: PrecinctTwo,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(38,77,153)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
 
@@ -302,110 +303,110 @@ var PrecinctSevenTwo = [
 
         var PrecinctThreePoly = new google.maps.Polygon({
           paths: PrecinctThree,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(165,43,14)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctThreePoly.setMap(map);
 
         var PrecinctFourPoly = new google.maps.Polygon({
           paths: PrecinctFour,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(191,115,0)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctFourPoly.setMap(map);
 
         var PrecinctFivePoly = new google.maps.Polygon({
           paths: PrecinctFive,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(12,113,18)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctFivePoly.setMap(map);
 
         var PrecinctSixPoly = new google.maps.Polygon({
           paths: PrecinctSix,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(115,0,115)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctSixPoly.setMap(map);
 
         var PrecinctSevenPoly = new google.maps.Polygon({
           paths: PrecinctSeven,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(0,115,149)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctSevenPoly.setMap(map);
 
         var PrecinctSevenTwoPoly = new google.maps.Polygon({
           paths: PrecinctSevenTwo,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(0,115,149)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctSevenTwoPoly.setMap(map);
 
         var PrecinctEightPoly = new google.maps.Polygon({
           paths: PrecinctEight,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(221,68,119)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctEightPoly.setMap(map);
 
         var PrecinctNinePoly = new google.maps.Polygon({
           paths: PrecinctNine,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(102,170,0)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctNinePoly.setMap(map);
 
         var PrecinctTenPoly = new google.maps.Polygon({
           paths: PrecinctTen,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(184,46,46)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctTenPoly.setMap(map);
 
         var PrecinctElevenPoly = new google.maps.Polygon({
           paths: PrecinctEleven,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(49,99,149)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctElevenPoly.setMap(map);
 
         var PrecinctTwelvePoly = new google.maps.Polygon({
           paths: PrecinctTwelve,
-          strokeColor: 'blue',
+          strokeColor: '#2F3A66',
           strokeOpacity: 0.8,
-          strokeWeight: 3,
-          fillColor: "rgb(153,68,153)",
+          strokeWeight: 1.5,
+          fillColor: "#85929E",
           fillOpacity: 0.35
         });
         PrecinctTwelvePoly.setMap(map);

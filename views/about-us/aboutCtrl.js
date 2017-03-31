@@ -2,28 +2,30 @@ var app = angular.module('mainApp');
 
 app.controller('aboutUs',function($scope, $http){
 
+  $.backstretch("https://cdn.shutterstock.com/shutterstock/videos/5610953/thumb/6.jpg");
+
   $scope.aboutInfo = [
     {
-      img: 'image.jpg',
-      name: 'Rich',
+      img: 'http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png',
+      name: 'RICH',
       fact: 'fun fact',
       why: 'reason for learning to code'
     },
     {
-      img: 'image.jpg',
-      name: 'John',
+      img: 'http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png',
+      name: 'JOHN',
       fact: 'fun fact',
       why: 'reason for learning to code'
     },
     {
-      img: 'image.jpg',
-      name: 'Karl',
+      img: 'http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png',
+      name: 'KARL',
       fact: 'fun fact',
       why: 'reason for learning to code'
     },
     {
-      img: 'image.jpg',
-      name: 'Dana',
+      img: 'http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png',
+      name: 'DANA',
       fact: 'fun fact',
       why: 'reason for learning to code'
     }
