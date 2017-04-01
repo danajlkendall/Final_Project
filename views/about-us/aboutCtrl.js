@@ -6,7 +6,7 @@ app.controller('aboutUs',function($scope, $http){
 
   $scope.aboutInfo = [
     {
-      img: 'http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png',
+      img: 'http://i.imgur.com/SQugUWR.jpg',
       name: 'RICH',
       fact: 'fun fact',
       why: 'reason for learning to code'
