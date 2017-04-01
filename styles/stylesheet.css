@@ -81,10 +81,6 @@ margin: auto;
   display: none;
 }
 
-.navbar-brand {
-  font-family: 'Roboto', sans-serif;
-}
-
 .header {
   font-family: 'Roboto', sans-serif;
 }
@@ -123,19 +119,21 @@ body, html {
 }
 
 .mainPrecinctInfo {
+  margin: 0 auto;
   margin-bottom: 20px;
   padding: 2%;
   height: 650px;
   width: 100%;
-  padding-top: 1%;
-  padding-bottom: 2%;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
 }
 
 #placeholder {
   text-align: center;
-  margin-top: 40%;
+  margin-top: 50%;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .mainPrecinctInfo h4 {
@@ -143,13 +141,13 @@ body, html {
 }
 
 .aboutContainer {
-  margin: 0 auto;
   width: 100%;
   padding: 1% 2%;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   text-align: center;
-  min-height: 550px;
+  min-height: 500px;
+  margin-bottom: 20px;
 }
 
 .aboutImg img {
@@ -195,3 +193,34 @@ li {
   overflow-y: scroll;
 }
 
+<<<<<<< HEAD
+=======
+.navbar {
+  font-family: 'Roboto', sans-serif;
+}
+
+.aboutDesc {
+  font-size: 16px;
+}
+
+.descHeader {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.landingContent {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding: 2%;
+  margin-top: 50px;
+}
+
+.landingText {
+  font-size: 18px;
+}
+>>>>>>> c12f8fd8e015f63d98e590055046a714f091b669

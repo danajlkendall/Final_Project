@@ -50,8 +50,8 @@ app.controller('mainPage',function($scope, $http){
       is3D: false,
       backgroundColor: {fill:'transparent'},
       pieSliceBorderColor:"transparent",
-      colors: ['#E8E9F2', '#D1D3E5', '#B3B6D1', '#9A9EC2', '#7D82AE', '#606699', '#50568B', '#3D447E', '#2D346C', '#1F265D', '#121849', '#080D37']
-      //fontName: 'Roboto'
+      colors: ['#E8E9F2', '#D1D3E5', '#B3B6D1', '#9A9EC2', '#7D82AE', '#606699', '#50568B', '#3D447E', '#2D346C', '#1F265D', '#121849', '#080D37'],
+      pieSliceTextStyle: {font: 'Roboto'}
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -224,27 +224,13 @@ app.controller('mainPage',function($scope, $http){
             neighborhood: entry.neighborhood,
           });
 
-<<<<<<< HEAD
           //Creates a Popup for each marker, and actively fills by calling the JSON objects //
-          var popup = new google.maps.InfoWindow( {
-=======
-
-
-//Creates a Popup for each marker, and actively fills by calling the JSON objects //
           var popup = new google.maps.InfoWindow({
->>>>>>> a012f5d7e4a3db3f6813fccde6dd65f603cc39b5
             content: '<div>'+
             '<h3>'+'Crime Type: '+'</h3>'+'<p>'+marker.category+'</p>'+
             '<h3>'+'Precinct Number: '+'</h3>'+'<p>'+marker.precinct+'</p>'+
             '<h3>'+'Neighborhood: '+'</h3>'+'<p>'+marker.neighborhood+'</p>'+
             '</div>'
-          });
-<<<<<<< HEAD
-          //Creates the POPUP function
-          marker.addListener('click', function(event){
-            popup.setPosition(event.latLng);
-            popup.open(map);
-
           });
 
           // Toggles Marker Visibility based on Zoom Level
@@ -257,28 +243,27 @@ app.controller('mainPage',function($scope, $http){
               marker.setMap(null);
             }
           });
-=======
-//Creates the POPUP function
-marker.addListener('click', function(event){
-  popup.setPosition(event.latLng);
-  popup.open(map);
-  map.setZoom(15);
-   	map.setCenter(marker.getPosition());
 
-});
+          //Creates the POPUP function
+          marker.addListener('click', function(event){
+            popup.setPosition(event.latLng);
+            popup.open(map);
+            map.setZoom(15);
+            map.setCenter(marker.getPosition());
+
+          });
 
 
-    // Toggles Marker Visibility based on Zoom Level
-    google.maps.event.addListener(map, 'zoom_changed', function() {
-    var zoom = map.getZoom();
-        if (zoom >= 12) {
-          marker.setMap(map);
-marker.setVisible(true);
-        } else {
-            marker.setMap(null);
-        }
-    });
->>>>>>> a012f5d7e4a3db3f6813fccde6dd65f603cc39b5
+          // Toggles Marker Visibility based on Zoom Level
+          google.maps.event.addListener(map, 'zoom_changed', function() {
+            var zoom = map.getZoom();
+            if (zoom >= 12) {
+              marker.setMap(map);
+              marker.setVisible(true);
+            } else {
+              marker.setMap(null);
+            }
+          });
 
           //////////////Below is copied from Google Maps API Documentation ////////////////////////////
           map.data.setStyle(function(feature) {
@@ -456,73 +441,69 @@ marker.setVisible(true);
         PrecinctTwelvePoly.setMap(map);
 
         // Create the search box and link it to the UI element.
-<<<<<<< HEAD
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
-        });
-
-        //Creats the Search Box for the Google Map
-        function initAutocomplete() {
-
-          var markers = [];
-          // Listen for the event fired when the user selects a prediction and retrieve
-          // more details for that place.
-          searchBox.addListener('places_changed', function() {
-            var places = searchBox.getPlaces();
-=======
           var input = document.getElementById('pac-input');
           var searchBox = new google.maps.places.SearchBox(input);
           map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
->>>>>>> a012f5d7e4a3db3f6813fccde6dd65f603cc39b5
 
-            if (places.length == 0) {
-              return;
-            }
+          // Bias the SearchBox results towards current map's viewport.
+          map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+          });
 
-            // Clear out the old markers.
-            markers.forEach(function(marker) {
-              marker.setMap(null);
-            });
-            markers = [];
+          //Createss the Search Box for the Google Map
+          function initAutocomplete() {
 
-            // For each place, get the icon, name and location.
-            var bounds = new google.maps.LatLngBounds();
-            places.forEach(function(place) {
-              if (!place.geometry) {
-                console.log("Returned place contains no geometry");
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function() {
+              var places = searchBox.getPlaces();
+              var input = document.getElementById('pac-input');
+
+
+              if (places.length == 0) {
                 return;
               }
 
-              // Create a marker for each place.
-              markers.push(new google.maps.Marker({
-                map: map,
-                icon: new google.maps.MarkerImage('http://www.clker.com/cliparts/B/B/1/E/y/r/marker-pin-google.svg',   //Precinct Shield Icon Source Location
-                null, null, null, new google.maps.Size(60,60)),
-                title: place.name,
-                position: place.geometry.location
-              }));
+              // Clear out the old markers.
+              markers.forEach(function(marker) {
+                marker.setMap(null);
+              });
+              markers = [];
 
-              if (place.geometry.viewport) {
-                // Only geocodes have viewport.
-                bounds.union(place.geometry.viewport);
-              } else {
-                bounds.extend(place.geometry.location);
-              }
+              // For each place, get the icon, name and location.
+              var bounds = new google.maps.LatLngBounds();
+              places.forEach(function(place) {
+                if (!place.geometry) {
+                  console.log("Returned place contains no geometry");
+                  return;
+                }
+
+                // Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                  map: map,
+                  icon: new google.maps.MarkerImage('http://www.clker.com/cliparts/B/B/1/E/y/r/marker-pin-google.svg',   //Precinct Shield Icon Source Location
+                  null, null, null, new google.maps.Size(60,60)),
+                  title: place.name,
+                  position: place.geometry.location
+                }));
+
+                if (place.geometry.viewport) {
+                  // Only geocodes have viewport.
+                  bounds.union(place.geometry.viewport);
+                } else {
+                  bounds.extend(place.geometry.location);
+                }
+              });
+              map.fitBounds(bounds);
             });
-            map.fitBounds(bounds);
-          });
 
-        }  //Closed out google maps search box
+          }  //Closed out google maps search box
 
-        initAutocomplete();
+          initAutocomplete();
+
+
+        });
 
 
       });
-
-
-    });
