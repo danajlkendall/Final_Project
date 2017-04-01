@@ -9,3 +9,4 @@ $(function() {
 		$(this).find("span").stop(true, true).fadeOut();
 	});
 });
+
