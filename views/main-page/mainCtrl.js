@@ -2,7 +2,7 @@ var app = angular.module('mainApp');
 
 app.controller('mainPage',function($scope, $http){
 
-  $.backstretch("https://cdn.shutterstock.com/shutterstock/videos/5610953/thumb/6.jpg");
+  $.backstretch("styles/images/police.jpg");
 
   //GRAPH STUFF
   $scope.homData = [];
@@ -46,6 +46,7 @@ app.controller('mainPage',function($scope, $http){
     var options = {
       title: '2016 Homicides by Precinct',
       is3D: false,
+      backgroundColor: {fill:'transparent'}
     };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -132,6 +133,7 @@ app.controller('mainPage',function($scope, $http){
                 title: "Homicides per Month in Precinct: " + $scope.selectedPrecinct,
                 bar: {groupWidth: "95%"},
                 legend: { position: "none" },
+                backgroundColor: {fill:'transparent'}
               };
               var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
               chart.draw(view, options);

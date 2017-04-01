@@ -1,7 +1,8 @@
 #map {
 margin: auto;
- height: 400px;
- width: 80%;
+ height: 500px;
+ width: 70%;
+ border-radius: 5px;
 }
 
 #infowindow-content .title {
@@ -84,6 +85,7 @@ margin: auto;
 
 .mainText {
   font-family: 'Nunito', sans-serif;
+  font-size: 18px;
 }
 
 body, html {
@@ -91,8 +93,10 @@ body, html {
 }
 
 .mapContainer {
-  margin: 0 auto;
-  width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 85%;
+  min-height: 700px;
   padding-top: 1%;
   padding-bottom: 2%;
   text-align: center;
@@ -102,7 +106,9 @@ body, html {
 
 .chartContainer {
   margin: 0 auto;
-  width: 85%;
+  margin-bottom: 20px;
+  width: 78%;
+  height: 600px;
   padding-top: 1%;
   padding-bottom: 2%;
   text-align: center;
@@ -112,7 +118,7 @@ body, html {
 
 .mainPrecinctInfo {
   margin-left: 0;
-  width: 84%;
+  width: 76%;
   padding-top: 1%;
   padding-bottom: 2%;
   background: rgba(255, 255, 255, 0.75);
@@ -143,13 +149,27 @@ li {
 }
 
 .pieChart {
-  width: auto;
+  width: 90%;
+  height: 80%;
+  height: auto;
+  background: none;
+}
+
+.columnChart {
+  width: 90%;
+  height: 80%;
+  height: auto;
+  background: none;
 }
 
 .container {
   width: 100%;
+  height: 100%;
 }
 
-.dropdown {
-  margin-right: 10px;
+.mainDropdown {
+  width: 50%;
+  background-color: white;
+  border: .5px solid black;
+  height: 40px;
 }
