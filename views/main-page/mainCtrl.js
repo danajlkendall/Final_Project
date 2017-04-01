@@ -233,23 +233,6 @@ app.controller('mainPage',function($scope, $http){
               '</div>'
             });
 
-            //Creates the POPUP function
-            marker.addListener('click', function(event){
-              popup.setPosition(event.latLng);
-              popup.open(map);
-
-            });
-
-            // Toggles Marker Visibility based on Zoom Level
-            google.maps.event.addListener(map, 'zoom_changed', function() {
-              var zoom = map.getZoom();
-              if (zoom >= 12) {
-                marker.setMap(map);
-                marker.setVisible(true);
-              } else {
-                marker.setMap(null);
-              }
-            });
 
             //Creates the POPUP function
             marker.addListener('click', function(event){
@@ -450,7 +433,7 @@ app.controller('mainPage',function($scope, $http){
           // Create the search box and link it to the UI element.
           var input = document.getElementById('pac-input');
           var searchBox = new google.maps.places.SearchBox(input);
-          map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+          map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
           // Bias the SearchBox results towards current map's viewport.
           map.addListener('bounds_changed', function() {
