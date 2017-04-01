@@ -207,12 +207,12 @@ app.controller('mainPage',function($scope, $http){
             incidentdate: entry.incidentdate,
             category: entry.category,
             neighborhood: entry.neighborhood,
-            icon: new google.maps.MarkerImage('http://findicons.com/files/icons/2736/halloween_theme/128/grim_reaper.png',   //Precinct Shield Icon Source Location
-            null, null, null, new google.maps.Size(30,30)),
           });
 
+
+
 //Creates a Popup for each marker, and actively fills by calling the JSON objects //
-          var popup = new google.maps.InfoWindow( {
+          var popup = new google.maps.InfoWindow({
             content: '<div>'+
             '<h3>'+'Crime Type: '+'</h3>'+'<p>'+marker.category+'</p>'+
             '<h3>'+'Precinct Number: '+'</h3>'+'<p>'+marker.precinct+'</p>'+
@@ -223,6 +223,8 @@ app.controller('mainPage',function($scope, $http){
 marker.addListener('click', function(event){
   popup.setPosition(event.latLng);
   popup.open(map);
+  map.setZoom(15);
+   	map.setCenter(marker.getPosition());
 
 });
 
@@ -416,7 +418,7 @@ var PrecinctSevenTwo = [
         // Create the search box and link it to the UI element.
           var input = document.getElementById('pac-input');
           var searchBox = new google.maps.places.SearchBox(input);
-          map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+          map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
           // Bias the SearchBox results towards current map's viewport.
           map.addListener('bounds_changed', function() {

@@ -15,6 +15,12 @@ margin: auto;
 
 #map #infowindow-content {
   display: inline;
+  background-color: blue;
+}
+
+#contentbox {
+  border-radius: 2em;
+  background-color: red;
 }
 
 .pac-card {
