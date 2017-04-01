@@ -222,18 +222,24 @@ app.controller('mainPage',function($scope, $http){
             incidentdate: entry.incidentdate,
             category: entry.category,
             neighborhood: entry.neighborhood,
-            icon: new google.maps.MarkerImage('http://findicons.com/files/icons/2736/halloween_theme/128/grim_reaper.png',   //Precinct Shield Icon Source Location
-            null, null, null, new google.maps.Size(30,30)),
           });
 
+<<<<<<< HEAD
           //Creates a Popup for each marker, and actively fills by calling the JSON objects //
           var popup = new google.maps.InfoWindow( {
+=======
+
+
+//Creates a Popup for each marker, and actively fills by calling the JSON objects //
+          var popup = new google.maps.InfoWindow({
+>>>>>>> a012f5d7e4a3db3f6813fccde6dd65f603cc39b5
             content: '<div>'+
             '<h3>'+'Crime Type: '+'</h3>'+'<p>'+marker.category+'</p>'+
             '<h3>'+'Precinct Number: '+'</h3>'+'<p>'+marker.precinct+'</p>'+
             '<h3>'+'Neighborhood: '+'</h3>'+'<p>'+marker.neighborhood+'</p>'+
             '</div>'
           });
+<<<<<<< HEAD
           //Creates the POPUP function
           marker.addListener('click', function(event){
             popup.setPosition(event.latLng);
@@ -251,6 +257,28 @@ app.controller('mainPage',function($scope, $http){
               marker.setMap(null);
             }
           });
+=======
+//Creates the POPUP function
+marker.addListener('click', function(event){
+  popup.setPosition(event.latLng);
+  popup.open(map);
+  map.setZoom(15);
+   	map.setCenter(marker.getPosition());
+
+});
+
+
+    // Toggles Marker Visibility based on Zoom Level
+    google.maps.event.addListener(map, 'zoom_changed', function() {
+    var zoom = map.getZoom();
+        if (zoom >= 12) {
+          marker.setMap(map);
+marker.setVisible(true);
+        } else {
+            marker.setMap(null);
+        }
+    });
+>>>>>>> a012f5d7e4a3db3f6813fccde6dd65f603cc39b5
 
           //////////////Below is copied from Google Maps API Documentation ////////////////////////////
           map.data.setStyle(function(feature) {
@@ -428,6 +456,7 @@ app.controller('mainPage',function($scope, $http){
         PrecinctTwelvePoly.setMap(map);
 
         // Create the search box and link it to the UI element.
+<<<<<<< HEAD
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -445,6 +474,11 @@ app.controller('mainPage',function($scope, $http){
           // more details for that place.
           searchBox.addListener('places_changed', function() {
             var places = searchBox.getPlaces();
+=======
+          var input = document.getElementById('pac-input');
+          var searchBox = new google.maps.places.SearchBox(input);
+          map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+>>>>>>> a012f5d7e4a3db3f6813fccde6dd65f603cc39b5
 
             if (places.length == 0) {
               return;
