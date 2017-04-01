@@ -90,12 +90,13 @@ margin: auto;
 
 body, html {
     height: 100%;
+    width: 100%;
 }
 
 .mapContainer {
   margin: auto;
   margin-bottom: 20px;
-  width: 85%;
+  width: 100%;
   min-height: 700px;
   padding-top: 1%;
   padding-bottom: 2%;
@@ -107,7 +108,7 @@ body, html {
 .chartContainer {
   margin: 0 auto;
   margin-bottom: 20px;
-  width: 78%;
+  width: 100%;
   height: 600px;
   padding-top: 1%;
   padding-bottom: 2%;
@@ -118,7 +119,9 @@ body, html {
 
 .mainPrecinctInfo {
   margin-left: 0;
-  width: 76%;
+  margin-bottom: 20px;
+  height: 600px;
+  width: 100%;
   padding-top: 1%;
   padding-bottom: 2%;
   background: rgba(255, 255, 255, 0.75);
@@ -131,7 +134,7 @@ body, html {
 
 .aboutContainer {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   padding: 1% 2%;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
@@ -151,19 +154,19 @@ li {
 .pieChart {
   width: 90%;
   height: 80%;
-  height: auto;
   background: none;
+  align: center;
 }
 
 .columnChart {
   width: 90%;
   height: 80%;
-  height: auto;
   background: none;
+  align: center;
 }
 
 .container {
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 
@@ -172,4 +175,11 @@ li {
   background-color: white;
   border: .5px solid black;
   height: 40px;
+}
+
+.precinctInfoList {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  max-height: 550px;
+  overflow-y: scroll;
 }
