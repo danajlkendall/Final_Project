@@ -15,6 +15,12 @@ margin: auto;
 
 #map #infowindow-content {
   display: inline;
+  background-color: blue;
+}
+
+#contentbox {
+  border-radius: 2em;
+  background-color: red;
 }
 
 .pac-card {
@@ -90,15 +96,15 @@ margin: auto;
 
 body, html {
     height: 100%;
+    width: 100%;
 }
 
 .mapContainer {
   margin: auto;
   margin-bottom: 20px;
-  width: 85%;
+  width: 100%;
   min-height: 700px;
-  padding-top: 1%;
-  padding-bottom: 2%;
+  padding: 1.5%;
   text-align: center;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
@@ -107,22 +113,29 @@ body, html {
 .chartContainer {
   margin: 0 auto;
   margin-bottom: 20px;
-  width: 78%;
-  height: 600px;
+  padding: 2%;
+  width: 100%;
+  height: 650px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  align: center;
+}
+
+.mainPrecinctInfo {
+  margin-bottom: 20px;
+  padding: 2%;
+  height: 650px;
+  width: 100%;
   padding-top: 1%;
   padding-bottom: 2%;
-  text-align: center;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
 }
 
-.mainPrecinctInfo {
-  margin-left: 0;
-  width: 76%;
-  padding-top: 1%;
-  padding-bottom: 2%;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
+#placeholder {
+  text-align: center;
+  margin-top: 40%;
 }
 
 .mainPrecinctInfo h4 {
@@ -131,7 +144,7 @@ body, html {
 
 .aboutContainer {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   padding: 1% 2%;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
@@ -150,21 +163,21 @@ li {
 }
 
 .pieChart {
-  width: 90%;
+  width: 100%;
   height: 80%;
-  height: auto;
   background: none;
+  align: center;
 }
 
 .columnChart {
-  width: 90%;
-  height: 80%;
-  height: auto;
+  width: 100%;
+  height: 75%;
   background: none;
+  align: center;
 }
 
 .container {
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 
@@ -173,4 +186,11 @@ li {
   background-color: white;
   border: .5px solid black;
   height: 40px;
+}
+
+.precinctInfoList {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  max-height: 550px;
+  overflow-y: scroll;
 }
