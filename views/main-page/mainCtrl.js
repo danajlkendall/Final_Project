@@ -45,6 +45,8 @@ app.controller('mainPage',function($scope, $http){
 
     var options = {
       title: '2016 Homicides by Precinct',
+      width: '100%',
+      height: '100%',
       is3D: false,
       backgroundColor: {fill:'transparent'}
     };
@@ -52,6 +54,10 @@ app.controller('mainPage',function($scope, $http){
       var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
       chart.draw(data, options);
     };
+
+    $(window).resize(function(){
+  	  	drawChart();
+  	});
 
   $scope.getData = function(selected){
     $scope.selectedPrecinct = selected;
@@ -135,9 +141,14 @@ app.controller('mainPage',function($scope, $http){
                 legend: { position: "none" },
                 backgroundColor: {fill:'transparent'}
               };
+
               var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
               chart.draw(view, options);
             };
+
+            $(window).resize(function(){
+          	  	drawChart();
+          	});
           };
         };
       });
