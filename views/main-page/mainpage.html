@@ -27,13 +27,14 @@
             <option ng-repeat="precinct in precincts" value="{{precinct.value}}">{{precinct.name}}</option>
           </select>
           <div class="pieChart" id="piechart_3d"></div>
-          <div class="columnChart" id="columnchart_values"></div><br>
+          <div class="columnChart noChart" id="columnchart_values"></div><br>
         </div>
       </div>
 
       <div class="col-sm-4">
         <div class = "mainPrecinctInfo">
           <h4 class="header">HOMICIDE DETAILS</h4>
+          <p id="placeholder" class="mainText">Select a Precinct from the dropdown on the left to view homicide details</p>
           <ul class="precinctInfoList">
             <li ng-repeat="homicide in allHomicides">
               Date: {{homicide.date}}<br>
