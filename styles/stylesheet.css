@@ -1,8 +1,10 @@
+/* Map Styling*/
+
 #map {
-margin: auto;
- height: 500px;
- width: 70%;
- border-radius: 5px;
+  margin: auto;
+  height: 500px;
+  width: 70%;
+  border-radius: 5px;
 }
 
 #infowindow-content .title {
@@ -77,22 +79,28 @@ margin: auto;
   width: 345px;
 }
 
-.noChart {
-  display: none;
-}
-
+/*General Styling*/
 .header {
   font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Main Page Styling*/
+.noChart {
+  display: none;
 }
 
 .mainText {
   font-family: 'Nunito', sans-serif;
   font-size: 18px;
-}
-
-body, html {
-    height: 100%;
-    width: 100%;
 }
 
 .mapContainer {
@@ -140,26 +148,6 @@ body, html {
   text-align: center;
 }
 
-.aboutContainer {
-  width: 100%;
-  padding: 1% 2%;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
-  text-align: center;
-  min-height: 500px;
-  margin-bottom: 20px;
-}
-
-.aboutImg img {
-  border-radius: 50%;
-  width: 50%;
-  margin: 5% 0%;
-}
-
-li {
-  list-style-type: none
-}
-
 .pieChart {
   width: 100%;
   height: 80%;
@@ -172,6 +160,10 @@ li {
   height: 75%;
   background: none;
   align: center;
+}
+
+li {
+  list-style-type: none
 }
 
 .container {
@@ -193,10 +185,26 @@ li {
   overflow-y: scroll;
 }
 
-<<<<<<< HEAD
-=======
-.navbar {
-  font-family: 'Roboto', sans-serif;
+/*About Us Styling*/
+.aboutContainer {
+  width: 100%;
+  padding: 1% 2%;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  text-align: center;
+  min-height: 550px;
+  margin-bottom: 20px;
+}
+
+.aboutHeader {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.aboutImg img {
+  border-radius: 50%;
+  width: 50%;
+  margin: 5% 0%;
 }
 
 .aboutDesc {
@@ -208,19 +216,65 @@ li {
   font-size: 18px;
 }
 
+/*Landing Page Styling*/
+.landingContainer {
+  margin-right: 0;
+  margin-left: 0;
+  background-color: black ;
+  background: url('images/flagClear2.png') no-repeat center center fixed, url('images/flashingLights.gif') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow {
+  display: inline-block;
+  position: relative;
+  text-indent: -9999px;
+  width: 475px;
+  height: 475px;	background: url('images/logo2.png') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.arrow span {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: url('images/chalkOutline2.png') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0;
+}
+
+
+/*
 .landingContent {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  padding: 2%;
-  margin-top: 50px;
+width: 80%;
+margin-left: 10%;
+margin-right: 10%;
+background: rgba(255, 255, 255, 0.75);
+border-radius: 10px;
+font-family: 'Roboto', sans-serif;
+text-align: center;
+padding: 2%;
+margin-top: 50px;
 }
 
 .landingText {
-  font-size: 18px;
-}
->>>>>>> c12f8fd8e015f63d98e590055046a714f091b669
+font-size: 18px;
+}*/
