@@ -92,7 +92,9 @@ app.controller('mainPage',function($scope, $http){
     document.getElementById("piechart_3d").className = "noChart";
     document.getElementById("placeholder").className = "noChart";
     $("#columnchart_values").removeClass("noChart");
+    document.getElementById("columnchart_values").className = "columnChart";
     $("#precinctInfoText").removeClass("noChart");
+    $("#returnButton").removeClass("noChart");
 
     $.getJSON("views/main-page/chart.json", function(json) {
       $scope.chartData = json.precinct;
@@ -159,6 +161,14 @@ app.controller('mainPage',function($scope, $http){
       });
     };
 
+    $scope.showPieChart = function(){
+      $scope.allHomicides = [];
+      document.getElementById("columnchart_values").className = "noChart";
+      document.getElementById("precinctInfoText").className = "noChart";
+      document.getElementById("returnButton").className = "noChart";
+      $("#piechart_3d").removeClass("noChart");
+      $("#placeholder").removeClass("noChart");
+    }
 
     //GOOGLE MAP SECTION
 
