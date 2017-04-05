@@ -166,6 +166,7 @@ app.controller('mainPage',function($scope, $http){
       document.getElementById("columnchart_values").className = "noChart";
       document.getElementById("precinctInfoText").className = "noChart";
       document.getElementById("returnButton").className = "noChart";
+      document.getElementById("placeholder").className = "mainText";
       $("#piechart_3d").removeClass("noChart");
       $("#placeholder").removeClass("noChart");
     }

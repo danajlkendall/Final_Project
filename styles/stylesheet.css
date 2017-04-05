@@ -219,6 +219,7 @@ li {
 
 .mainDropdown {
   width: 50%;
+  font-family: 'Roboto', sans-serif;
   background-color: white;
   border: .5px solid black;
   height: 40px;
