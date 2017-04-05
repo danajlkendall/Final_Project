@@ -92,6 +92,7 @@ app.controller('mainPage',function($scope, $http){
     document.getElementById("piechart_3d").className = "noChart";
     document.getElementById("placeholder").className = "noChart";
     $("#columnchart_values").removeClass("noChart");
+    $("#precinctInfoText").removeClass("noChart");
 
     $.getJSON("views/main-page/chart.json", function(json) {
       $scope.chartData = json.precinct;
@@ -251,18 +252,6 @@ app.controller('mainPage',function($scope, $http){
             map.setZoom(15);
             map.setCenter(marker.getPosition());
 
-          });
-
-
-          // Toggles Marker Visibility based on Zoom Level
-          google.maps.event.addListener(map, 'zoom_changed', function() {
-            var zoom = map.getZoom();
-            if (zoom >= 12) {
-              marker.setMap(map);
-              marker.setVisible(true);
-            } else {
-              marker.setMap(null);
-            }
           });
 
           //////////////Below is copied from Google Maps API Documentation ////////////////////////////
