@@ -91,6 +91,16 @@ body, html {
 
 .navbar {
   font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.navbar-brand {
+  font-family: 'Arvo', serif;
+  font-size: 24px;
+}
+
+* {
+  color: #585858;
 }
 
 /*Main Page Styling*/
