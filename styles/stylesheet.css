@@ -126,7 +126,6 @@ footer {
   background-size: cover;
   top: 0;
   margin-bottom: 0;
-  opacity: 0.9;
   overflow:auto;
 }
 
@@ -194,7 +193,6 @@ footer {
   padding: 4%;
   height: 700px;
   width: 100%;
-  background: white;
   background-color: #F2F3F4;
 }
 
