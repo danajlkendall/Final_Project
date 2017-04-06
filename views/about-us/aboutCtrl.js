@@ -2,7 +2,7 @@ var app = angular.module('mainApp');
 
 app.controller('aboutUs',function($scope, $http){
 
-  $.backstretch("styles/images/police.jpg");
+  $.backstretch("styles/images/car.jpg");
 
   $scope.aboutInfo = [
     {

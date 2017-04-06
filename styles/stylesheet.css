@@ -82,6 +82,7 @@
 /*General Styling*/
 .header {
   font-family: 'Roboto', sans-serif;
+  color: #585858;
 }
 
 body, html {
@@ -93,15 +94,13 @@ body, html {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   border-radius: 0px;
+  background-color: #E5E7E9;
 }
 
-.navbar-brand {
+.navName {
   font-family: 'Arvo', serif;
-  font-size: 24px;
-}
-
-* {
-  color: #585858;
+  font-size: 28px;
+  color: #152648;
 }
 
 footer {
@@ -114,9 +113,8 @@ footer {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   padding: 4px;
+  color: #585858;
 }
-
-
 
 /*Main Page Styling*/
 .noChart {
@@ -126,6 +124,7 @@ footer {
 .mainText {
   font-family: 'Nunito', sans-serif;
   font-size: 18px;
+  color: #585858;
 }
 
 .mapContainer {
@@ -226,6 +225,7 @@ li {
   background-color: white;
   border: .5px solid black;
   height: 40px;
+  color: #585858;
 }
 
 .precinctInfoList {
@@ -233,6 +233,7 @@ li {
   font-size: 14px;
   max-height: 550px;
   overflow-y: scroll;
+  color: #585858;
 }
 
 .itemLabel {
@@ -247,6 +248,7 @@ li {
   margin-top: 15px;
   margin-bottom: 20px;
   font-weight: bold;
+  color: #585858;
 }
 
 /*About Us Styling*/

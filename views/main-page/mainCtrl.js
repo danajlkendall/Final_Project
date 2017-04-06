@@ -2,7 +2,7 @@ var app = angular.module('mainApp');
 
 app.controller('mainPage',function($scope, $http){
 
-  $.backstretch("styles/images/police.jpg");
+  $.backstretch("styles/images/car.jpg");
 
   //GRAPH STUFF
   $scope.homData = [];
@@ -50,7 +50,20 @@ app.controller('mainPage',function($scope, $http){
       is3D: false,
       backgroundColor: {fill:'transparent'},
       pieSliceBorderColor:"transparent",
-      colors: ['#E8E9F2', '#D1D3E5', '#B3B6D1', '#9A9EC2', '#7D82AE', '#606699', '#50568B', '#3D447E', '#2D346C', '#1F265D', '#121849', '#080D37'],
+      colors: [
+        '#E8E9F2',
+        '#D1D3E5',
+        '#B3B6D1',
+        '#9A9EC2',
+        '#7D82AE',
+        '#606699',
+        '#50568B',
+        '#3D447E',
+        '#2D346C',
+        '#1F265D',
+        '#121849',
+        '#080D37'
+      ],
       pieSliceTextStyle: {font: 'Roboto'}
     };
 
