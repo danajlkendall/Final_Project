@@ -33,7 +33,7 @@
   outline: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  font-family: Nunito;
+  font-family: Open Sans;
 }
 
 #pac-container {
@@ -47,14 +47,14 @@
 }
 
 .pac-controls label {
-  font-family: Nunito;
+  font-family: Open Sans;
   font-size: 13px;
   font-weight: 300;
 }
 
 #pac-input {
   background-color: #fff;
-  font-family: Nunito;
+  font-family: Open Sans;
   font-size: 15px;
   font-weight: 300;
   margin-left: 12px;
@@ -81,8 +81,10 @@
 
 /*General Styling*/
 .header {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #585858;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 body, html {
@@ -90,17 +92,16 @@ body, html {
   width: 100%;
 }
 
-.navbar {
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+.mainNav {
+  margin: 0;
+  font-size: 20px;
   border-radius: 0px;
   background-color: #E5E7E9;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.navName {
-  font-family: 'Arvo', serif;
-  font-size: 28px;
-  color: #152648;
+.mainNav li:hover {
+  background-color: #fff;
 }
 
 footer {
@@ -110,10 +111,42 @@ footer {
   margin: 0;
   clear: both;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   padding: 4px;
   color: #585858;
+}
+
+.jumbotron {
+  position: relative;
+  background: url("images/car.jpg") no-repeat center center;
+  width:100%;
+  background-size: cover;
+  height: 50%;
+  top: 0;
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+.jumbotronHeader {
+  color: white;
+  width: 40%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  font-family: 'Francois One', sans-serif;
+}
+
+.jumbotronText {
+  color: white;
+  width: 60%;
+  margin-left: 7%;
+}
+
+.jumbotronText p {
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  line-height: 200%;
+  font-size: 30px;
 }
 
 /*Main Page Styling*/
@@ -122,9 +155,10 @@ footer {
 }
 
 .mainText {
-  font-family: 'Nunito', sans-serif;
-  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   color: #585858;
+  line-height: 150%;
 }
 
 .mapContainer {
@@ -134,8 +168,6 @@ footer {
   min-height: 700px;
   padding: 1.5%;
   text-align: center;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
 }
 
 .chartContainer {
@@ -145,9 +177,15 @@ footer {
   width: 100%;
   height: 700px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
   align: center;
+  background-color: #F2F3F4;
+}
+
+.twitterContainer {
+  height: 700px;
+  margin-bottom: 20px;
+  overflow-y: scroll;
+  border: 2px solid #F2F3F4;
 }
 
 .mainPrecinctInfo {
@@ -156,8 +194,8 @@ footer {
   padding: 4%;
   height: 700px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
+  background: white;
+  background-color: #F2F3F4;
 }
 
 #placeholder {
@@ -197,7 +235,7 @@ footer {
 
 #returnButton {
   background-color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   border: 2px solid #585858;
   color: #585858;
@@ -214,14 +252,14 @@ li {
   list-style-type: none
 }
 
-.container {
-  width: 90%;
+.container-fluid {
+  width: 100%;
   height: 100%;
 }
 
 .mainDropdown {
   width: 50%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: white;
   border: .5px solid black;
   height: 40px;
@@ -229,7 +267,7 @@ li {
 }
 
 .precinctInfoList {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   max-height: 550px;
   overflow-y: scroll;
@@ -239,10 +277,11 @@ li {
 .itemLabel {
   font-weight: bold;
   display: inline;
+  color: #080D37;
 }
 
 #precinctInfoText {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   text-align: center;
   margin-top: 15px;
@@ -255,11 +294,11 @@ li {
 .aboutContainer {
   width: 100%;
   padding: 1% 2%;
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
   text-align: center;
-  min-height: 550px;
+  min-height: 520px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #F2F3F4;
 }
 
 .aboutHeader {

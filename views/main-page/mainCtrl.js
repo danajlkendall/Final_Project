@@ -2,7 +2,7 @@ var app = angular.module('mainApp');
 
 app.controller('mainPage',function($scope, $http){
 
-  $.backstretch("styles/images/car.jpg");
+  //$.backstretch("styles/images/car.jpg");
 
   //GRAPH STUFF
   $scope.homData = [];
@@ -64,7 +64,7 @@ app.controller('mainPage',function($scope, $http){
         '#121849',
         '#080D37'
       ],
-      pieSliceTextStyle: {font: 'Roboto'}
+      pieSliceTextStyle: {font: 'Open Sans'}
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -134,18 +134,18 @@ app.controller('mainPage',function($scope, $http){
           function drawChart2() {
             var data = google.visualization.arrayToDataTable([
               ["Element", "# Homicides", { role: "style" } ],
-              ["Jan 2016", $scope.homChart.homJan, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Feb 2016", $scope.homChart.homFeb, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Mar 2016", $scope.homChart.homMar, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Apr 2016", $scope.homChart.homApr, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["May 2016", $scope.homChart.homMay, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Jun 2016", $scope.homChart.homJun, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Jul 2016", $scope.homChart.homJul, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Aug 2016", $scope.homChart.homAug, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Sep 2016", $scope.homChart.homSep, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Oct 2016", $scope.homChart.homOct, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Nov 2016", $scope.homChart.homNov, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Dec 2016", $scope.homChart.homDec, "fill-color: #2C3E50; fill-opacity: 0.6"]
+              ["Jan 2016", $scope.homChart.homJan, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Feb 2016", $scope.homChart.homFeb, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Mar 2016", $scope.homChart.homMar, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Apr 2016", $scope.homChart.homApr, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["May 2016", $scope.homChart.homMay, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Jun 2016", $scope.homChart.homJun, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Jul 2016", $scope.homChart.homJul, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Aug 2016", $scope.homChart.homAug, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Sep 2016", $scope.homChart.homSep, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Oct 2016", $scope.homChart.homOct, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Nov 2016", $scope.homChart.homNov, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Dec 2016", $scope.homChart.homDec, "fill-color: #080D37; fill-opacity: 0.6"]
             ]);
 
             var view = new google.visualization.DataView(data);

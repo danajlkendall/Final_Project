@@ -1,13 +1,9 @@
-<div class="container mainContainer">
-
+<div class="mainContainer container-fluid">
   <div class="row">
     <div class="col-sm-12">
       <div class="mapContainer">
         <h2 class="header">LOCATE A DETROIT HOMICIDE</h3>
           <p class="mainText">
-            Detroit Murder Map was created to give Detroit residents an easier way to locate homicidal activity in their area <br>
-            using open-source data found on the <a href="https://data.detroitmi.gov/">Detroit's Open Data Portal</a> for 2016.<br>
-            <br>
             Get started by:
             <br>1. Zooming in on a specific precinct below to browse homicides in that area
             <br>2. Searching an address to find a specific precinct
@@ -19,8 +15,14 @@
     <br>
     <input class = "mainText" id="pac-input" class="controls" type="text" placeholder="Search an Address">
 
-    <div class="row">
-      <div class="col-sm-8">
+    <div class="row secondRow">
+      <div class="col-sm-3">
+        <div class="twitterContainer">
+          <a class="twitter-timeline" href="https://twitter.com/detroitpolice">Tweets by detroitpolice</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
         <div class="chartContainer">
           <h4 class="header">HOMICIDE STATISTICS</h4>
           <p class="mainText">Select a Precinct to See <br> Homicides per Month by Precinct (2016)</p>
@@ -34,7 +36,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class = "mainPrecinctInfo">
           <h4 class="header">HOMICIDE DETAILS</h4>
           <p id="placeholder" class="placeholderText mainText">Select a Precinct from the dropdown on the left to view homicide details for 2016</p>

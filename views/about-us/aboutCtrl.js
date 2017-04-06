@@ -2,14 +2,14 @@ var app = angular.module('mainApp');
 
 app.controller('aboutUs',function($scope, $http){
 
-  $.backstretch("styles/images/car.jpg");
+  //$.backstretch("styles/images/car.jpg");
 
   $scope.aboutInfo = [
     {
       img: 'http://i.imgur.com/SQugUWR.jpg',
       name: 'RICH',
-      fact: 'fun fact',
-      why: 'reason for learning to code'
+      fact: 'Rich can downhill, board, telemark, cliff and tree',
+      why: 'Rich is hoping to move into a programming role full-time'
     },
     {
       img: 'http://i.imgur.com/NxJsfNd.png',
