@@ -2,7 +2,7 @@ var app = angular.module('mainApp');
 
 app.controller('mainPage',function($scope, $http){
 
-  $.backstretch("styles/images/police.jpg");
+  //$.backstretch("styles/images/car.jpg");
 
   //GRAPH STUFF
   $scope.homData = [];
@@ -50,8 +50,21 @@ app.controller('mainPage',function($scope, $http){
       is3D: false,
       backgroundColor: {fill:'transparent'},
       pieSliceBorderColor:"transparent",
-      colors: ['#E8E9F2', '#D1D3E5', '#B3B6D1', '#9A9EC2', '#7D82AE', '#606699', '#50568B', '#3D447E', '#2D346C', '#1F265D', '#121849', '#080D37'],
-      pieSliceTextStyle: {font: 'Roboto'}
+      colors: [
+        '#E8E9F2',
+        '#D1D3E5',
+        '#B3B6D1',
+        '#9A9EC2',
+        '#7D82AE',
+        '#606699',
+        '#50568B',
+        '#3D447E',
+        '#2D346C',
+        '#1F265D',
+        '#121849',
+        '#080D37'
+      ],
+      pieSliceTextStyle: {font: 'Open Sans'}
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -93,6 +106,9 @@ app.controller('mainPage',function($scope, $http){
     document.getElementById("piechart_3d").className = "noChart";
     document.getElementById("placeholder").className = "noChart";
     $("#columnchart_values").removeClass("noChart");
+    document.getElementById("columnchart_values").className = "columnChart";
+    $("#precinctInfoText").removeClass("noChart");
+    $("#returnButton").removeClass("noChart");
 
     $.getJSON("views/main-page/chart.json", function(json) {
       $scope.chartData = json.precinct;
@@ -119,18 +135,18 @@ app.controller('mainPage',function($scope, $http){
           function drawChart2() {
             var data = google.visualization.arrayToDataTable([
               ["Element", "# Homicides", { role: "style" } ],
-              ["Jan 2016", $scope.homChart.homJan, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Feb 2016", $scope.homChart.homFeb, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Mar 2016", $scope.homChart.homMar, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Apr 2016", $scope.homChart.homApr, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["May 2016", $scope.homChart.homMay, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Jun 2016", $scope.homChart.homJun, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Jul 2016", $scope.homChart.homJul, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Aug 2016", $scope.homChart.homAug, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Sep 2016", $scope.homChart.homSep, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Oct 2016", $scope.homChart.homOct, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Nov 2016", $scope.homChart.homNov, "fill-color: #2C3E50; fill-opacity: 0.6"],
-              ["Dec 2016", $scope.homChart.homDec, "fill-color: #2C3E50; fill-opacity: 0.6"]
+              ["Jan 2016", $scope.homChart.homJan, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Feb 2016", $scope.homChart.homFeb, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Mar 2016", $scope.homChart.homMar, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Apr 2016", $scope.homChart.homApr, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["May 2016", $scope.homChart.homMay, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Jun 2016", $scope.homChart.homJun, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Jul 2016", $scope.homChart.homJul, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Aug 2016", $scope.homChart.homAug, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Sep 2016", $scope.homChart.homSep, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Oct 2016", $scope.homChart.homOct, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Nov 2016", $scope.homChart.homNov, "fill-color: #080D37; fill-opacity: 0.6"],
+              ["Dec 2016", $scope.homChart.homDec, "fill-color: #080D37; fill-opacity: 0.6"]
             ]);
 
             var view = new google.visualization.DataView(data);
@@ -159,6 +175,15 @@ app.controller('mainPage',function($scope, $http){
       });
     };
 
+    $scope.showPieChart = function(){
+      $scope.allHomicides = [];
+      document.getElementById("columnchart_values").className = "noChart";
+      document.getElementById("precinctInfoText").className = "noChart";
+      document.getElementById("returnButton").className = "noChart";
+      document.getElementById("placeholder").className = "mainText";
+      $("#piechart_3d").removeClass("noChart");
+      $("#placeholder").removeClass("noChart");
+    }
 
     //GOOGLE MAP SECTION
 
@@ -252,18 +277,6 @@ app.controller('mainPage',function($scope, $http){
             map.setZoom(15);
             map.setCenter(marker.getPosition());
 
-          });
-
-
-          // Toggles Marker Visibility based on Zoom Level
-          google.maps.event.addListener(map, 'zoom_changed', function() {
-            var zoom = map.getZoom();
-            if (zoom >= 12) {
-              marker.setMap(map);
-              marker.setVisible(true);
-            } else {
-              marker.setMap(null);
-            }
           });
 
           //////////////Below is copied from Google Maps API Documentation ////////////////////////////

@@ -13,4 +13,5 @@ app.controller('landingPage',function($scope, $location){
   		$(this).find("span").stop(true, true).fadeOut();
   	});
   });
+  
 });
