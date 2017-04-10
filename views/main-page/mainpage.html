@@ -8,6 +8,9 @@
             Detroit Murder Map was created to give Detroit residents an easier way to locate homicidal activity in their area <br>
             using open-source data found on the <a href="https://data.detroitmi.gov/">Detroit's Open Data Portal</a> for 2016.<br>
             <br>
+            If you have any information that could assist law enforcement with investigating any crime please reach out to <a href="https://www.1800speakup.org/">Crime Stoppers</a>
+            <br>
+            <br>
             Get started by zooming in on a specific precinct below to browse homicides in that area, or search an address to find a specific precinct.
           </p>
           <div id="map"></div><br>
@@ -38,7 +41,8 @@
           <ul class="precinctInfoList">
             <li ng-repeat="homicide in allHomicides">
               Date: {{homicide.date}}<br>
-              Description: {{homicide.desc}}<br><br>
+              Description: {{homicide.desc}}<br>
+              <br><br>
             </li>
           </ul>
         </div>

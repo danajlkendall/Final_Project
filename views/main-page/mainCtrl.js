@@ -81,7 +81,8 @@ app.controller('mainPage',function($scope, $http){
             date: $scope.homData[i].incidentdate,
             lat: $scope.homData[i].location.latitude,
             long: $scope.homData[i].location.longitude,
-            desc: $scope.homData[i].offensedescription
+            desc: $scope.homData[i].offensedescription,
+            reportNum: $scope.homData[i].crno
           };
           $scope.allHomicides.push(homicide);
         };
