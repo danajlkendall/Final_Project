@@ -14,8 +14,8 @@ app.controller('aboutUs',function($scope, $http){
     {
       img: 'http://i.imgur.com/NxJsfNd.png',
       name: 'JOHN',
-      fact: 'Throughout the department John is known by the code name “Whispers”',
-      why: 'John is learning coding as part of an exploratory process for the Detroit Police Department, to evaluate how coding can be applied within law enforcement'
+      fact: 'John is ambidextrous',
+      why: 'The internet is only getting bigger so I wanted to learn how it worked.'
     },
     {
       img: 'http://i.imgur.com/ojCWASa.png',
